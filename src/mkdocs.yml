@@ -1,0 +1,28 @@
+site_name: 'Andrew Konovalov portfolio'
+docs_dir: docs
+repo_url: https://github.com/AndrewK33/portfolio/
+theme:
+  name: material
+  language: 'ru'
+  palette:
+    primary: black
+    accent: yellow
+  # custom_dir: swagger-iu/
+
+nav:
+  - Начало работы: index.md
+  - Авторизация: auth.md
+  - Окружения: env.md
+  - "Протокол: rest": rest.md
+  - "Протокол: streaming": marketdata.md
+  - HOW-TO:
+      - "Работа с торговыми поручениями": orders.md
+      - "Инструменты и котировки": faq_marketdata.md
+  - FAQ:
+      - Глоссарий: glossary.md
+      - "Условия использования": faq_rules.md
+      - "Идентификация торговых инструментов": faq_identification.md
+      - "Торговые площадки и режимы торгов": markets.md
+      - Ошибки: faq_errors.md
+      - Песочница: faq_sandbox.md
+      - Мультисчета: faq_multiaccounts.md
