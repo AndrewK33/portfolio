@@ -1,0 +1,93 @@
+@startuml
+autoactivate on
+actor User as User
+participant Mobile as Mobile
+participant AccessCheck as AccessCheck
+participant СУБО_ЗП_по_требованию as SUBO_ODP
+queue Сервис_очереди_ЦП_РБ as CP_RB_Queue
+participant СУБО_ЦП_РБ as SUBO_CP_RB
+participant Tyk as Tyk
+participant Service_ODP
+
+
+group "Доступность сервисов"
+User -> Mobile: Инициирование перехода в раздел "Я зп-клиент"
+Mobile -> AccessCheck: Запрос списка зп-сервисов для ФЛ
+return Ответ список доступных зп-сервисов для ФЛ
+return Вывод страницы с доступными зарплатными сервисами
+end
+
+group "Подключение услуги ЗП по требованию"
+User -> Mobile: Инициирование подключения услуги
+Mobile -> SUBO_ODP: Вызов GET /user-service-information
+SUBO_ODP -> Tyk: GET #
+Tyk -> Service_ODP: GET #
+return response
+return response
+return Ответ user-service-information : false
+Mobile -> SUBO_ODP: Вызов GET /signing
+SUBO_ODP -> SUBO_CP_RB: Создание операции цифрового подписания
+return deeplink uri
+return deeplink uri
+Mobile -> Mobile: Переход на экран подписания ЦП_РБ
+User -> Mobile: Подписание ЦП_РБ
+return Завершение процедуры подписания ЦП_РБ
+Mobile -> SUBO_ODP: Вызов GET /signing_check
+SUBO_ODP -> CP_RB_Queue: Infinity listner to MQ
+return responses
+return Статус подписания пользователем ЦП_РБ
+return Завершение процедуры подписания ЦП_РБ
+Mobile -> SUBO_ODP: Вызов GET /signed_webview
+SUBO_ODP -> Tyk: Вызов GET #
+Tyk -> Service_ODP: Вызов GET #
+return uri webview
+return uri webview
+return uri webview
+Mobile -> Mobile: Переход на экран подписания Иннотех (webview)
+User -> Mobile: Подписание Иннотех
+return Завершение процедуры подписания Иннотех
+return Завершение процедур подписания Иннотех
+Mobile -> SUBO_ODP: Вызов GET /user-service-information
+SUBO_ODP -> Tyk: GET #
+Tyk -> Service_ODP: GET #
+return response
+return response
+return Ответ user-service-information : true
+return Завершение процедуры подключения услуги
+end
+
+group "Использование услуги ЗП по требованию"
+User -> Mobile: Инициирование перехода в раздел ЗП по требованию
+Mobile -> SUBO_ODP: GET /salary; GET /payments
+SUBO_ODP -> Tyk: GET #
+Tyk -> Service_ODP: GET #
+return response
+return response
+return response
+return Отображение доступных средств и истории операций
+User -> Mobile: Инициирование запроса денежных средств
+Mobile -> SUBO_ODP: POST /paymen-pickup
+SUBO_ODP -> Tyk: POST #
+Tyk -> Service_ODP: POST #
+return response
+return response
+return response
+Mobile -> SUBO_ODP: Вызов GET /signed_webview
+SUBO_ODP -> Tyk: Вызов GET #
+Tyk -> Service_ODP: Вызов GET #
+return uri webview
+return uri webview
+return uri webview
+Mobile -> Mobile: Переход на экран подписания Иннотех (webview)
+User -> Mobile: Подписание Иннотех
+return Завершение процедуры подписания Иннотех
+return Завершение процедур подписания Иннотех
+Mobile -> SUBO_ODP: Вызов GET /payment/{paymentId}
+SUBO_ODP -> Tyk: GET #
+Tyk -> Service_ODP: GET #
+return response
+return response
+return response
+return Отображение статуса платежа
+end
+@enduml

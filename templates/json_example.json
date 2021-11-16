@@ -1,0 +1,39 @@
+/*GET .screen-information */
+
+{
+  "header": {
+    "title": "",
+    "description": ""
+  },
+  "mainBenefit": {
+    "benefit": [
+      {
+        "iconName": "",
+        "title": ""
+      },
+      {
+        "iconName": "",
+
+        "title": ""
+
+      },
+    ],
+    "description": "",
+    "containerText": "",
+    "disclaimer": ""
+  },
+  "howIsWork": {
+    "list": [
+      {
+        "orderNumber": ,
+        "title": ""
+      },
+    ],
+    "disclaimer": "",
+    "containerText": ""
+  },
+  "agreement": {
+    "title": "",
+    "docUrl": ""
+  }
+}
