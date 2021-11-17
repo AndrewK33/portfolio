@@ -1,0 +1,169 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../user_case.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:" ";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(3);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../user_case.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=822 style='border-collapse:
+ collapse;table-layout:fixed;width:617pt'>
+ <col width=222 style='mso-width-source:userset;mso-width-alt:8118;width:167pt'>
+ <col width=600 style='mso-width-source:userset;mso-width-alt:21942;width:450pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 width=222 style='height:15.0pt;width:167pt'><a name="RANGE!A1"></a></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <tr height=42 style='height:31.5pt'>
+  <td height=42 class=xl74 width=222 style='height:31.5pt;width:167pt'>Вариант
+  использования</td>
+  <td class=xl65 width=600 style='border-left:none;width:450pt'>Запрет на
+  авторизацию пользователя, не принявшего &quot;Пользовательское
+  соглашение&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>ID</td>
+  <td class=xl70 width=600 style='border-top:none;border-left:none;width:450pt'>3</td>
+ </tr>
+ <tr height=42 style='height:31.5pt'>
+  <td height=42 class=xl74 width=222 style='height:31.5pt;border-top:none;
+  width:167pt'>Краткое описание</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>Запрет
+  на авторизацию пользователя, не принявшего &quot;Пользовательское
+  соглашение&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Актор(ы)</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;,
+  &quot;Система&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Предварительные условия</td>
+  <td class=xl73 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;
+  не согласился с условиями &quot;Пользовательского соглашения&quot;</td>
+ </tr>
+ <tr height=263 style='mso-height-source:userset;height:197.25pt'>
+  <td height=263 class=xl74 width=222 style='height:197.25pt;border-top:none;
+  width:167pt'>Действия</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  ВИ начинается в случае, если &quot;Пользователь&quot; не подтвердил согласие
+  с условиями &quot;Пользовательского соглашения&quot;<br>
+    2. &quot;Пользователь&quot; нажимает на не активную кнопку
+  &quot;Продолжить&quot;, без предварительного выделения чек-бокса<br>
+    3. &quot;Система&quot; подсвечивает сервисное сообщение
+  (&quot;Дополнительный атрибут&quot; 5)<br>
+    4. &quot;Пользователь&quot; выражает согласие выделнием чек-бокса у фразы,
+  предлагающей согласиться с условиями &quot;Пользовательского
+  соглашения&quot;<br>
+    4.1. &quot;Система&quot; делает кнопку &quot;Продолжить&quot;
+  активной<br>
+    4.2. &quot;Пользователь&quot; нажимает конопку &quot;Продолжить&quot; и его
+  направляет на экран предлагающий пройти процедуру &quot;Авторизации&quot;<br>
+    5. &quot;Пользователь&quot; принимает решение не соглашаться с условиями
+  &quot;Пользовательского соглашения&quot; и прекращает работу с приложением</td>
+ </tr>
+ <tr height=63 style='height:47.25pt'>
+  <td height=63 class=xl74 width=222 style='height:47.25pt;border-top:none;
+  width:167pt'>Результат</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  &quot;Пользователь&quot; согласился с условиями &quot;Пользовательского
+  соглашения&quot; и его переносит на экран предлагающий пройти процедуру
+  &quot;Авторизации&quot;<br>
+    2. &quot;Пользователь&quot; прекратил использование приложения</td>
+ </tr>
+ <tr height=105 style='height:78.75pt'>
+  <td height=105 class=xl74 width=222 style='height:78.75pt;border-top:none;
+  width:167pt'>Ограничения</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>Если
+  &quot;Пользователь&quot; не воспользовался функцией &quot;Скипнуть
+  прочтение&quot; и приступил к прочтению &quot;Пользовательского
+  соглашения&quot;, то без выделения чек-бокса у фразы, предлагающей
+  согласиться с условиями &quot;Пользовательского соглашения&quot;,
+  &quot;Пользователь&quot; не сможет продолжить дальнейшую работу в приложении</td>
+ </tr>
+ <tr height=231 style='height:173.25pt'>
+  <td height=231 class=xl74 width=222 style='height:173.25pt;border-top:none;
+  width:167pt'>Дополнительные атрибуты<br>
+    </td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  Язык отображаемого текста в приложении должен соответствовать<span
+  style='mso-spacerun:yes'>  </span>настроенной на устройстве (телефон,
+  планшет, иное) языковой политике<br>
+    2. Текст должен быть читаем, хорошо контрастировать с фоном<br>
+    3. Должна быть предусмотрена функция увеличения и выделения текста<br>
+    4. Необходимо предусмотреть паттерн для людей людей с ограниченными
+  возможностями для принятия согласия с условиями &quot;Пользовательского
+  соглашения&quot; помимо выделения чек-бокса (voice-assistans и т.д.)<br>
+    5. Кнопка &quot;Продолжить&quot; априори не активна, под кнопкой красным
+  цветом выделено сервисное сообщение, которое уведомляет
+  &quot;Пользователя&quot; о том, что: &quot;Пользователь&quot; не подвердил
+  согласие с условиями &quot;Пользовательского соглашения&quot; и не может
+  продолжать работу с приложением без подтверждения согласия<span
+  style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height=189 style='height:141.75pt'>
+  <td height=189 class=xl75 style='height:141.75pt;border-top:none'>Предложения
+  для обсуждения</td>
+  <td class=xl67 width=600 style='border-top:none;border-left:none;width:450pt'>В
+  случае если &quot;Пользователя&quot; не устраивает текст
+  &quot;Пользовательского соглашения&quot; необходимо дать возможность
+  &quot;Пользователю&quot; написания предложения для корректировки текста
+  &quot;Пользовательского соглашения&quot;, необходимо предусмотреть
+  специальную форму для данного действия.<br>
+    Примечание: <br>
+    Каждый пользователь отказавшийся использовать приложение это потеря
+  потенциальной прибыли для компании<br>
+    Нужно учитывать особенности (физологические и умственные) каждого
+  пользователя</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=222 style='width:167pt'></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

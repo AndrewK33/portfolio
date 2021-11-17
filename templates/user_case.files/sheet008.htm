@@ -1,0 +1,137 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../user_case.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:" ";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(7);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../user_case.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=822 style='border-collapse:
+ collapse;table-layout:fixed;width:617pt'>
+ <col width=222 style='mso-width-source:userset;mso-width-alt:8118;width:167pt'>
+ <col width=600 style='mso-width-source:userset;mso-width-alt:21942;width:450pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 width=222 style='height:15.0pt;width:167pt'><a name="RANGE!A1"></a></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;width:167pt'>Вариант
+  использования</td>
+  <td class=xl65 width=600 style='border-left:none;width:450pt'>&quot;Запрет на
+  авторизацию пользователя, заблокированного в приложении&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>ID</td>
+  <td class=xl70 width=600 style='border-top:none;border-left:none;width:450pt'>7</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Краткое описание</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>Сверка
+  вводимых данных с реестром &quot;Заблокированные пользователи&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Актор(ы)</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;,
+  &quot;Система&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Предварительные условия</td>
+  <td class=xl76 width=600 style='border-top:none;border-left:none;width:450pt'>-</td>
+ </tr>
+ <tr height=189 style='height:141.75pt'>
+  <td height=189 class=xl74 width=222 style='height:141.75pt;border-top:none;
+  width:167pt'>Действия</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  ВИ начинается, когда &quot;Пользователь&quot; вводит свои персональные данные
+  в поля &quot;Почта&quot;, &quot;Номер телефона&quot; ….<br>
+    2. &quot;Система&quot; обращается к реестру &quot;Заблокированные
+  пользователи&quot; и осуществляет комплаенс данных <br>
+    2.1. В случае наличия совпадений &quot;Система&quot; выводит сервисное
+  сообщение о необходимости связаться со Службой поддержки для разрешения
+  проблемы/уточнения информации<br>
+    2.2. В случае отсутствия совпадений действий от &quot;Системы&quot; не
+  требуется<br>
+    3. &quot;Пользователь&quot; переходит к следующему шагу</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Результат</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;
+  переходит к следующему шагу процедуры &quot;Авторизация&quot;</td>
+ </tr>
+ <tr height=42 style='height:31.5pt'>
+  <td height=42 class=xl74 width=222 style='height:31.5pt;border-top:none;
+  width:167pt'>Ограничения</td>
+  <td class=xl73 width=600 style='border-top:none;border-left:none;width:450pt'>В
+  случае наличия блокировки в приложении &quot;Пользователь&quot; не может
+  перейти к следующему шагу</td>
+ </tr>
+ <tr height=105 style='height:78.75pt'>
+  <td height=105 class=xl74 width=222 style='height:78.75pt;border-top:none;
+  width:167pt'>Дополнительные атрибуты<br>
+    </td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Система&quot;
+  проводит комплаенс в автономном режиме не отвлекая пользователя от
+  прохождения процедур<br>
+    &quot;Пользователя&quot; не должно блокировать в системе по полям ФИО (т.е.
+  если Иванова А.А. заблокировали и внесли в реестр &quot;Заблокированные
+  пользователи&quot; у остальных<span style='mso-spacerun:yes'> 
+  </span>Ивановых А.А. не должновозникнуть проблем)</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl75 style='height:15.75pt;border-top:none'>Предложения
+  для обсуждения</td>
+  <td class=xl76 width=600 style='border-top:none;border-left:none;width:450pt'>-</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=222 style='width:167pt'></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

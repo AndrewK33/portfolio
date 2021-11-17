@@ -1,0 +1,159 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../user_case.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:" ";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(6);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../user_case.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=822 style='border-collapse:
+ collapse;table-layout:fixed;width:617pt'>
+ <col width=222 style='mso-width-source:userset;mso-width-alt:8118;width:167pt'>
+ <col width=600 style='mso-width-source:userset;mso-width-alt:21942;width:450pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 width=222 style='height:15.0pt;width:167pt'><a name="RANGE!A1"></a></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <tr height=42 style='height:31.5pt'>
+  <td height=42 class=xl74 width=222 style='height:31.5pt;width:167pt'>Вариант
+  использования</td>
+  <td class=xl65 width=600 style='border-left:none;width:450pt'>Подтверждение
+  номера телефона по средству ввода смс-кода. Отправка смс-кода должна
+  производиться с помощью сервиса SMSС</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>ID</td>
+  <td class=xl70 width=600 style='border-top:none;border-left:none;width:450pt'>6</td>
+ </tr>
+ <tr height=42 style='height:31.5pt'>
+  <td height=42 class=xl74 width=222 style='height:31.5pt;border-top:none;
+  width:167pt'>Краткое описание</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>Подтверждение
+  номера телефона по средству ввода смс-кода. Отправка смс-кода должна
+  производиться с помощью сервиса SMSС</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Актор(ы)</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;,
+  &quot;Система&quot;, &quot;Сервис SMSC&quot;</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Предварительные условия</td>
+  <td class=xl76 width=600 style='border-top:none;border-left:none;width:450pt'>-</td>
+ </tr>
+ <tr height=378 style='height:283.5pt'>
+  <td height=378 class=xl74 width=222 style='height:283.5pt;border-top:none;
+  width:167pt'>Действия</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  ВИ начинается, когда &quot;Пользователь&quot; завершает заполнение данных
+  <br>
+    2. &quot;Система&quot; выводит сервисное сообщение: &quot;Для продолжении
+  процедуры &quot;Регистрации&quot; подтвердите Ваш номер телефона, путем
+  введение в &quot;Необходимое поле&quot; одноразового пароля из
+  СМС&quot;<br>
+    2.1. &quot;Сестема&quot; обращается к сервису &quot;Генератор одноразовых
+  паролей&quot;<br>
+    2.2. Сервис &quot;Генератор одноразовых паролей&quot; отправляет результат
+  в сервис &quot;SMSC&quot;, с копией &quot;Системе&quot;<br>
+    2.3. Сервис &quot;SMSC&quot; направяет одноразовый пароль по номеру
+  телефона, в соответствии с данными &quot;Номер телефона&quot; заполненными в
+  поле &quot;<font class="font9">&Aring;</font><font class="font5">&quot;<br>
+    3. &quot;Пользователю&quot; приходит уведомление с одноразовым
+  паролем<br>
+    4. &quot;Пользователь&quot; заполняет одноразовый пароль в
+  &quot;Необходимое поле&quot;<br>
+    5. &quot;Система&quot; верифицирует корректность введенных данных <br>
+    5.1 &quot;Система&quot; автоматически направляет пользователя к следующему
+  шагу процедуры &quot;Авторизации&quot; в приложения<br>
+    5.2. &quot;Система&quot; выводит сервисное сообщение о некорректности
+  введеного номера. <br>
+    В этом случае процедуры 2.1 - 2.3 повторяются<br>
+    6. &quot;Пользователь&quot; переходит к следующему шагу процедуры
+  &quot;Авторизация&quot;<br>
+    </font></td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl74 width=222 style='height:15.75pt;border-top:none;
+  width:167pt'>Результат</td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;
+  переходит к следующему шагу процедуры &quot;Авторизация&quot;</td>
+ </tr>
+ <tr height=126 style='height:94.5pt'>
+  <td height=126 class=xl74 width=222 style='height:94.5pt;border-top:none;
+  width:167pt'>Ограничения</td>
+  <td class=xl73 width=600 style='border-top:none;border-left:none;width:450pt'>&quot;Пользователь&quot;
+  не может ввести номер телефона другого &quot;Пользователя&quot; для отправки
+  на него одноразового пароля<br>
+    &quot;Пользователь&quot; не может<span style='mso-spacerun:yes'> 
+  </span>перейти к &quot;Ленте&quot; приложения если данные введены
+  некорректно<br>
+    Ввести ограничение по времени 0.59 секунд на повторную отправку
+  одноразового пароля</td>
+ </tr>
+ <tr height=84 style='height:63.0pt'>
+  <td height=84 class=xl74 width=222 style='height:63.0pt;border-top:none;
+  width:167pt'>Дополнительные атрибуты<br>
+    </td>
+  <td class=xl65 width=600 style='border-top:none;border-left:none;width:450pt'>1.
+  Алгоритм создания одноразовых паролей должен соответствовать стандартам:
+  <br>
+    RFC 1760 (S/Key), RFC 2289 (OTP), RFC 4226 (HOTP) и RFC 6238 (TOTP)<br>
+    2. Необходимо предусмотреть функцию автозаполнения одноразового пароля из
+  уведомления (Autofill bar)</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl75 style='height:15.75pt;border-top:none'>Предложения
+  для обсуждения</td>
+  <td class=xl76 width=600 style='border-top:none;border-left:none;width:450pt'>-</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=222 style='width:167pt'></td>
+  <td width=600 style='width:450pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
