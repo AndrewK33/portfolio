@@ -275,8 +275,9 @@ call perevod(10001,'d010',null);
 </details>
 
 ##Flow and Charts 
-![page](/schemes/epc_example-1.png)
+
 <details><summary>EPC</summary>
+
 
 
 </details>
