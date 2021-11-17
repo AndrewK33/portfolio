@@ -1,5 +1,5 @@
 select @@sql_mode; set @@sql_mode='';
-/* формируем скрипт для создание представления view и тестируем*/
+/* формируем скрипт для создание представления view и тестируем */
 select 
 ee.emp_no,
 ee.birth_date,
@@ -43,6 +43,6 @@ full_name,
 hire_date
 ;
 
-## тестирование 
+/* тестирование */
 select GROUP_CONCAT(DISTINCT d.dept_no  ORDER BY d.emp_no ASC SEPARATOR ', ') from dept_emp as d
 where d.emp_no = 10010;
