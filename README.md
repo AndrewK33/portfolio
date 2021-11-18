@@ -59,6 +59,12 @@ Also, the materials presented below are impersonal and do not contain business c
 
 ## SQL
 
+<details><summary>ERD</summary>
+
+![page](schemes/erd_example.jpg)
+
+</details>
+
 <details><summary>DDL</summary>
 
 ```sql
