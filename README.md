@@ -305,3 +305,117 @@ call perevod(10001,'d010',null);
 ![page](/schemes/sequence_example.png)
 
 </details>
+
+
+## Business and users analysis
+
+<details><summary>CJM</summary>
+
+![page](/images/pad_cjm.jpg)
+
+</details>
+
+<details><summary>Structure of metrics</summary>
+
+![page](/templates/metrics_structure.htm)
+
+</details>
+
+<details><summary>User case</summary>
+
+![page](/templates/user_case.htm)
+
+</details>
+
+<details><summary>UX analysis</summary>
+
+![page](/templates/ux_audit.docx)
+
+</details>
+
+## Working with data formats
+
+<details><summary>JSON</summary>
+
+```json
+
+/*GET .screen-information */
+
+{
+  "header": {
+    "title": "",
+    "description": ""
+  },
+  "mainBenefit": {
+    "benefit": [
+      {
+        "iconName": "",
+        "title": ""
+      },
+      {
+        "iconName": "",
+
+        "title": ""
+
+      },
+    ],
+    "description": "",
+    "containerText": "",
+    "disclaimer": ""
+  },
+  "howIsWork": {
+    "list": [
+      {
+        "orderNumber": ,
+        "title": ""
+      },
+    ],
+    "disclaimer": "",
+    "containerText": ""
+  },
+  "agreement": {
+    "title": "",
+    "docUrl": ""
+  }
+}
+
+```
+
+</details>
+
+<details><summary>XSD</summary>
+
+```xml
+
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://www.test.com/webapp/springapp/ws/products"
+        targetNamespace="http://www.test.com/webapp/springapp/ws/products" elementFormDefault="qualified">
+
+    <xs:element name="getAllProductsRequest">
+        <xs:complexType/>
+    </xs:element>
+
+
+    <xs:element name="getAllProductsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="products" maxOccurs="unbounded" type="tns:product"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="price" type="xs:int"/>
+            <xs:element name="categoryTitle" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
+```
+
+</details>
