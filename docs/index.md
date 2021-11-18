@@ -317,19 +317,19 @@ call perevod(10001,'d010',null);
 
 <details><summary>Structure of metrics</summary>
 
-![page](/templates/metrics_structure.htm)
+![page](/templates/metrics.png)
 
 </details>
 
 <details><summary>User case</summary>
 
-![page](/templates/user_case.htm)
+![page](/templates/cases.png)
 
 </details>
 
 <details><summary>UX analysis</summary>
 
-![page](/templates/ux_audit.docx)
+![page](/templates/ux_audit.pdf)
 
 </details>
 
