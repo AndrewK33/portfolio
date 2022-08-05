@@ -664,10 +664,11 @@ _______________
 </details>
 
 <details><summary>Web Analytics certificate</summary>
-
-![page](/certificates/WA.en.pdf)
-
+<kbd>
+  <img src="/certificates/WA.en.pdf" />
+</kbd>
 </details>
+
 
 <details><summary>HTML-CSS certificate</summary>
 
