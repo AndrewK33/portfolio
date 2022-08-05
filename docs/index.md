@@ -1,20 +1,22 @@
-## Hi, my name is Andrew Konovalov and this is my portfolio
+## Hi world, my name is Andrew Konovalov and this is my portfolio
 
 ### About me:
 
-1. Major speciality is System Analysis
-2. Minor specialities are business and web analysis
-3. Study programming language: Java
-4. Total work experience in IT - 5 years
+1. Major speciality: System Analysis
+2. Minor specialities: Business and Web analysis
+3. Programming language: Java
+4. Total work experience in IT: 2013.06 - p.t.
 
 _______________
 
 ### Worked in companies:
 
-1. Russian Railways (2017.08 - 2020.03)
-2. VTB (2020.03 - 2020.10)
-3. Alfa-Capital (2020.10 - 2021.07)
-4. Innotech Company Group T1 (2021.07 - p.t.)
+1. Mondelēz International (2013.06 - 2014.08)
+2. Russian Railways (2017.08 - 2020.03)
+3. VTB (2020.03 - 2020.10)
+4. Alfa-Capital (2020.10 - 2021.07)
+5. Innotech Company Group T1 (2021.07 - 2022.01)
+6. Leroy Merlin (2022.01 - p.t.)
 
 _______________
 
@@ -47,6 +49,10 @@ _______________
    * [Development of a client service for early receipt of wages "Money Forward"](https://www.vtb.ru/o-banke/press-centr/novosti-i-press-relizy/2021/07/2021-07-22-klienty-vtb-smogut-poluchat-zarplatu-v-lyuboy-den/)
    * [Development of a client service to optimize HR document flow](https://www.cnews.ru/news/line/2021-08-12_vtb_otsifruet_kadrovyj_dokumentooborot)
 
+5. Leroy Merlin
+   * [Refactoring of legacy price monitoring systems to implement the "Low prices every day" strategy](https://leroymerlin.ru/company/nizkiye-ceny-kazhdiy-den/?utm_referrer=https%3A%2F%2Fwww.google.com%2F)
+   * [Development of a system for managing electronic price tags (+ development of a system for collecting data for electronic price tags)](https://tech.leroymerlin.ru/)
+
 _______________
 
 ### My tools and examples of work:
@@ -56,6 +62,8 @@ Attention!
 The materials below do not violate the NDA and employers' guidelines for publishing work materials.
 Also, the materials presented below are impersonal and do not contain business critical information.
 ```
+
+_______________
 
 ## SQL
 
@@ -280,6 +288,8 @@ call perevod(10001,'d010',null);
 
 </details>
 
+_______________
+
 ## Flows and Charts
 
 <details><summary>EPC</summary>
@@ -312,8 +322,10 @@ call perevod(10001,'d010',null);
 
 </details>
 
+_______________
 
-## Business and users analysis
+
+## Business and Systems analysis tools
 
 <details><summary>CJM</summary>
 
@@ -338,6 +350,208 @@ call perevod(10001,'d010',null);
 ![page](/templates/ux_audit.pdf)
 
 </details>
+
+<details><summary>Swagger</summary>
+
+```swagger
+
+swagger: '2.0'
+
+info:
+  version: 1.0.0
+  title: Electronic Shelf Labels Management API
+  description: 'Public API for Electronic Shelf Labels to build interaction processes with them.'
+  contact:
+    name: Konovalov Andrew
+    
+
+host: esl  ## TBD: fill with host of the actual working API
+basePath: /v1 ## TBD: fill with the version of the first API
+
+tags:
+  - name: Label
+
+paths:
+  /labels/{labelId}/link:
+    post:
+      tags:
+        - Label
+      summary: Create a link between the label & items
+      description: Setup the shelf label to display information about the given items. The endpoint can configure both 'one label - one item' & 'one label - multiple items' kinds of relationships.
+      operationId: linkProductsToLabel
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: labelLink
+          description: Information about the link
+          required: true
+          schema:
+            $ref: '#/definitions/labelLink'
+        - name: labelId
+          in: path
+          description: ID of the shelf label
+          required: true
+          type: string
+      responses:
+        '204':
+          description: The link has been successfully created. The shelf label will show information about the item soon.
+        '402':
+          description: License for shelf labels management system has been expired.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '404':
+          description: Label with the given ID doesn't exist.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '405':
+          description: Parameters of the link are invalid.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '500':
+          description: Failed to process required operation.
+          schema:
+            $ref: '#/definitions/errorResponse'
+    delete:
+      tags:
+        - Label
+      summary: Remove link between the label & items
+      description: Detach the label from all the items that were previously linked to it. The operation has to be done before attaching new items to the label.
+      operationId: removeLabelLink
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: labelId
+          in: path
+          description: ID of the shelf label
+          required: true
+          type: string
+      responses:
+        '204':
+          description: The link has been successfully removed. The shelf label is ready to be linked with other items.
+        '402':
+          description: License for shelf labels management system has been expired.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '404':
+          description: Label with the given ID doesn't exist.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '500':
+          description: Failed to process required operation.
+          schema:
+            $ref: '#/definitions/errorResponse'
+  /labels:blink:
+    post:
+      tags:
+        - Label
+      summary: Blink LED on all labels for a given item
+      description: Initiate blinking of labels according to the given pattern & duration.
+      operationId: blinkLabelsByItem
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: ledConfig
+          description: Parameters that control the blinking
+          required: true
+          schema:
+            $ref: '#/definitions/ledConfig'
+        - name: lmCode
+          in: query
+          description: Internal ID of the item
+          required: true
+          type: string
+        - name: locationId
+          in: query
+          description: ID of the logcation where labels are
+          type: number
+          required: true
+      responses:
+        '202':
+          description: Labels have started blinking.
+        '402':
+          description: License for shelf labels management system has been expired.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '404':
+          description: Label with the given ID doesn't exist.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '405':
+          description: Parameters of the LED configuration are invalid.
+          schema:
+            $ref: '#/definitions/errorResponse'
+        '500':
+          description: Failed to process required operation.
+          schema:
+            $ref: '#/definitions/errorResponse'
+
+definitions:
+  labelLink:
+    type: object
+    title: LabelLink
+    properties:
+      items:
+        type: array
+        items:
+          type: object
+          properties:
+            gtinMaster:
+              type: string
+              description: "GTIN of the item (~ barcode)"
+              example: "4044996156514"
+      locationId:
+        type: number
+        description: "Id of the location where the item gets sold (~ shop)"
+        example: 44
+
+  errorResponse:
+    type: object
+    title: ErrorResponse
+    properties:
+      errors:
+        type: array
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              description: 'Short name of the error'
+            details:
+              type: string
+              description: 'Detailed message describing the error'
+
+  ledConfig:
+    type: object
+    title: LedConfuguration
+    properties:
+      color:
+        type: string
+        description: 'Color of the LED. Supported values are: BLUE, ...' ## TBD: investigate the supported values
+        example: BLUE
+      duration:
+        type: object ## TBD: investigate the available configuration
+        description: 'Duration of the blinking'
+      pattern:
+        type: object
+        properties:
+          name:
+            type: string
+            description: 'Name of the preconfigured blinking pattern. Contact the development team to setup one for your use-case.'
+
+```
+
+</details>
+
+_______________
+
 
 ## Working with data formats
 
@@ -423,5 +637,40 @@ call perevod(10001,'d010',null);
 </xs:schema>
 
 ```
+
+</details>
+
+
+_______________
+
+## Achievement and certificates
+
+<details><summary>DB SQL certificate</summary>
+
+![page](/certificates/db.en.pdf)
+
+</details>
+
+<details><summary>Java certificate</summary>
+
+![page](/certificates/java.en.pdf)
+
+</details>
+
+<details><summary>Spring certificate</summary>
+
+![page](/certificates/spring.en.pdf)
+
+</details>
+
+<details><summary>Web Analytics certificate</summary>
+
+![page](/certificates/WA.en.pdf)
+
+</details>
+
+<details><summary>HTML-CSS certificate</summary>
+
+![page](/certificates/html_css.en.pdf)
 
 </details>
