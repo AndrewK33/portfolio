@@ -665,7 +665,10 @@ _______________
 
 <details><summary>Web Analytics certificate</summary>
 
-![page](/certificates/WA.en.pdf)
+<kbd>
+  <img src="/certificates/WA_cert.pdf" />
+</kbd>
+
 
 </details>
 
