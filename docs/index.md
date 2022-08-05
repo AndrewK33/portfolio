@@ -562,41 +562,41 @@ _______________
 /*GET .screen-information */
 
 {
-  "header": {
-    "title": "",
-    "description": ""
-  },
-  "mainBenefit": {
-    "benefit": [
-      {
-        "iconName": "",
-        "title": ""
-      },
-      {
-        "iconName": "",
+   "header": {
+      "title": "",
+      "description": ""
+   },
+   "mainBenefit": {
+      "benefit": [
+         {
+            "iconName": "",
+            "title": ""
+         },
+         {
+            "iconName": "",
 
-        "title": ""
+            "title": ""
 
-      },
-    ],
-    "description": "",
-    "containerText": "",
-    "disclaimer": ""
-  },
-  "howIsWork": {
-    "list": [
-      {
-        "orderNumber": ,
-        "title": ""
-      },
-    ],
-    "disclaimer": "",
-    "containerText": ""
-  },
-  "agreement": {
-    "title": "",
-    "docUrl": ""
-  }
+         },
+      ],
+      "description": "",
+      "containerText": "",
+      "disclaimer": ""
+   },
+   "howIsWork": {
+      "list": [
+         {
+            "orderNumber": ,
+            "title": ""
+         },
+      ],
+      "disclaimer": "",
+      "containerText": ""
+   },
+   "agreement": {
+      "title": "",
+      "docUrl": ""
+   }
 }
 
 ```
@@ -613,27 +613,27 @@ _______________
         xmlns:tns="http://www.test.com/webapp/springapp/ws/products"
         targetNamespace="http://www.test.com/webapp/springapp/ws/products" elementFormDefault="qualified">
 
-    <xs:element name="getAllProductsRequest">
-        <xs:complexType/>
-    </xs:element>
+   <xs:element name="getAllProductsRequest">
+      <xs:complexType/>
+   </xs:element>
 
 
-    <xs:element name="getAllProductsResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="products" maxOccurs="unbounded" type="tns:product"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+   <xs:element name="getAllProductsResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="products" maxOccurs="unbounded" type="tns:product"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
 
-    <xs:complexType name="product">
-        <xs:sequence>
-            <xs:element name="id" type="xs:long"/>
-            <xs:element name="title" type="xs:string"/>
-            <xs:element name="price" type="xs:int"/>
-            <xs:element name="categoryTitle" type="xs:string"/>
-        </xs:sequence>
-    </xs:complexType>
+   <xs:complexType name="product">
+      <xs:sequence>
+         <xs:element name="id" type="xs:long"/>
+         <xs:element name="title" type="xs:string"/>
+         <xs:element name="price" type="xs:int"/>
+         <xs:element name="categoryTitle" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
 </xs:schema>
 
 ```
@@ -664,9 +664,9 @@ _______________
 </details>
 
 <details><summary>Web Analytics certificate</summary>
-<kbd>
-  <img src="/certificates/WA.en.pdf" />
-</kbd>
+
+![page](/certificates/WA.en.pdf)
+
 </details>
 
 
